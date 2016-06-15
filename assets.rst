@@ -30,8 +30,8 @@ Responsive Design
 
 In most cases web projects will need mobile features as well, sometimes assets won't include
 responsive designs so it's up to developers to manipulate the desktop elements as best as they can
-to create the mobile views. The base Magento theme is responsive by default so it's not difficult
-to match this with the project style.
+to create the mobile views. The **rdw** and **luma** themes for Magento are responsive by default so
+it's not difficult to match this with the project style.
 
 .. note::
 
