@@ -1,22 +1,20 @@
-.. Media Lounge Coding Standards documentation master file, created by
-   sphinx-quickstart on Wed Jun  1 16:36:38 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. title:: Media Lounge Coding Standards
 
-Welcome to Media Lounge Coding Standards's documentation!
-=========================================================
+Media Lounge Coding Standards
+=============================
 
-Contents:
+The following guide describes the coding styles adhered to when working on Media Lounge projects.
+It also details the process that it's usually followed to develop new projects, features, bug fixing
+and amends.
+
+This guide is always open for review and improvements whenever the processes change, the code is
+open source so any member of the Media Lounge team is welcome to contribute to it.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Development Workflow
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   assets
+   development/index
+   review
+   deployment
