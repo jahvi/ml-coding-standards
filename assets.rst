@@ -3,6 +3,9 @@
 Assets & Instructions
 =====================
 
+Introduction
+------------
+
 Most of the time development work starts with an initial set of assets, they come in different
 formats depending on the complexity of the job but usually they will be PSDs for big changes and
 PDFs for smaller changes or bug fixes.
@@ -22,10 +25,13 @@ and can prepare in advance.
 
     Sample PDF with instructions for new website.
 
+Responsive Design
+-----------------
+
 In most cases web projects will need mobile features as well, sometimes assets won't include
 responsive designs so it's up to developers to manipulate the desktop elements as best as they can
-to create the mobile views. The base Magento themes is responsive by default and it's not difficult
-to match this with the project styles.
+to create the mobile views. The base Magento theme is responsive by default so it's not difficult
+to match this with the project style.
 
 .. note::
 
