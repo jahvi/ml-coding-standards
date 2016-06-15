@@ -41,6 +41,6 @@ Then generate each extension with:
 
     Prompt screen of Magento Module Generator.
 
-.. _Magento Extension Generator: https://github.com/jahvi/generator-magento-module
+.. _Magento Module Generator: https://github.com/jahvi/generator-magento-module
 .. _Yeoman: http://yeoman.io/
 .. _npm: https://www.npmjs.com/
