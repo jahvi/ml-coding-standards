@@ -17,3 +17,4 @@ of repetitive tasks.
    installation
    style-guides
    source-control
+   site-assessments
