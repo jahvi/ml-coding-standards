@@ -18,6 +18,44 @@ manually.
 
 .. _DeployBot: https://deploybot.com/
 
+Branching Workflow
+------------------
+
+We use a branching workflow to make sure changes are deployed to the right environments easily.
+Projects should have 2 main working branches:
+
+- **master**: Contains the latest stable code with changes synced to the live server.
+- **develop**: Contains the latest changes that are still in development or waiting for review and approval, this branch is synced to the staging server.
+
+All new changes should be made into the **develop** branch, it is recommended that a new local branch is created for
+every new task so it's clear what commits need to be merged into master once they are approved.
+
+The process looks like this:
+
+1. You get a new task in asana for a change.
+2. Create a local branch from develop, make sure to name it **task/LAST_5_NUMBERS_IN_TASK_URL**. For example, to create a local branch for this task https://app.asana.com/0/11928277286825/429244967265381 you can do ``git checkout -b task/65381``
+3. Work like normal, making commits to this branch.
+4. Once the work is finished merge branch into develop and push ``git checkout develop && git merge task/65381 && git push``
+5. Send task back and wait for approval to go live.
+6. If the task needs more work go to step #3 and repeat.
+7. If the task is approved cherry pick changes into master and push ``git checkout master && git cherry-pick commit(s) && git push``
+8. Deploy changes from DeployBot.
+9. Local branch can be deleted at this point.
+
+The benefit of using the task ID in the branch name is that, even if the task comes back after some time, we can quickly
+check our work by just looking at the URL and checking out into the branch.
+
+For smaller changes we can work directly on the **develop** branch but it's important to use ``cherry-pick``
+to incorporate commits into **master** instead of ``merge``, this will make sure that only your changes
+are included and not any other changes in the **develop** branch.
+
+.. note::
+    If you want to cherry pick multiple commits into a single one you can use ``git cherry-pick --no-commit``
+    to cherry pick changes without automatically committing them.
+
+The main idea to keep in mind is that **develop** and **master** are independent,
+changes should not be made directly in **master**.
+
 New projects
 ------------
 
@@ -37,6 +75,8 @@ There's only a few things to keep in mind:
 
 - For Staging servers the deployment mode can be set as **Automatic** but for Live server this must
   be set as **Manual**.
+- Staging servers must be set to track the **develop** branch, Live servers must be set to follow the
+  **master** branch.
 - Configuration specific files like ``local.xml`` or ``wp-config.php`` files are not tracked in the
   repo so the need to be set as **Configuration files** for each environment.
 
