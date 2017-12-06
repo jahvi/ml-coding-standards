@@ -18,3 +18,4 @@ open source so any member of the Media Lounge team is welcome to contribute to i
    development/index
    review
    deployment
+   examples
